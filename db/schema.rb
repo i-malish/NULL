@@ -11,11 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161018130721) do
+ActiveRecord::Schema.define(version: 20161018133012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "adminpack"
+
+  create_table "addresses", force: :cascade do |t|
+    t.string   "address"
+    t.string   "type"
+    t.integer  "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
@@ -26,6 +34,35 @@ ActiveRecord::Schema.define(version: 20161018130721) do
     t.string   "web_address"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "managers", force: :cascade do |t|
+    t.string   "name"
+    t.string   "l_name"
+    t.string   "email"
+    t.integer  "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "professions", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "vacancies", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.boolean  "state"
+    t.integer  "salary"
+    t.integer  "company_id"
+    t.integer  "manager_id"
+    t.integer  "profession_id"
+    t.integer  "city_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end
