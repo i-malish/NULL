@@ -20,11 +20,15 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
+  host: localhost
+  port: 5432
+
 
 development:
   <<: *default
-  database: NULL_development
-
+  database: NULL
+  username: postgres
+  password: 1234
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -57,7 +61,9 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: NULL_test
+  database: NULL
+  username: postgres
+  password: 1234
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +86,6 @@ test:
 #
 production:
   <<: *default
-  database: NULL_production
-  username: NULL
-  password: <%= ENV['NULL_DATABASE_PASSWORD'] %>
+  database: NULL
+  username: postgres
+  password: 1234
