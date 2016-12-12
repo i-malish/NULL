@@ -1,28 +1,9 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Web-додаток для швидкого і зрозумілого пошуку вакансій за заданими параметрами, а такoж зручного розміщення вакансій роботи.
+-	мова програмування: Ruby, Ruby on Rails;
+-	База даних: PostgreSQL;
+-	У	 додатку є три основні ролі:
+а) незареєстрований користувач – роль в якій буде відбуватися пошук вакансій (роботи).
+б) зареєстрований користувач – роль в якій роботодавець буде створювати компанії і відповідні вакансії до компаній.
+в) адміністратор додатку, для цього використано Active Admin
+Active Admin is a Ruby on Rails plugin for generating administration style interfaces. It abstracts common business application patterns to make it simple for developers to implement beautiful and elegant interfaces with very little effort.  
+Методи і технології: Ruby, Ruby on Rails, RubyMine, PostgreSQL, Twitter Bootstrap, jQuery
